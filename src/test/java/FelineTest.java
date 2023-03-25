@@ -27,6 +27,7 @@ public class FelineTest {
                 {0, 0},
         };
     }
+
     @Test
     public void getKittensCountTest() {
         assertEquals(expectedResult, feline.getKittens(kittensQuantity));
