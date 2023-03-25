@@ -38,17 +38,6 @@ public class CatTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    //    тест ниже не работает (не учитывается)
-    @Test
-    public void NotFelineGetFoodTest() throws Exception {
-        Cat cat = new Cat(feline);
-        Mockito.when(feline.getFood("Травоядное")).thenReturn(List.of("Трава", "Различные растения"));
-        List<String> expectedResult = List.of("Трава", "Различные растения");
-        List<String> actualResult = feline.getFood("Травоядное");
-        assertEquals(expectedResult, actualResult);
-    }
-
-
     @Test
     public void unknownAnimalGetFoodTest() throws Exception {
         Cat cat = new Cat(feline);
