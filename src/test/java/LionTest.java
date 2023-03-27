@@ -1,11 +1,10 @@
 import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -17,13 +16,6 @@ public class LionTest {
 
     @Mock
     Feline feline;
-    @Mock
-    Lion lion;
-
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Test
     public void doesNotHaveManeTest() throws Exception {
@@ -50,6 +42,7 @@ public class LionTest {
     public void getKittensTest() throws Exception {
         Lion lion = new Lion(new Feline(), "Самец");
         int expectedResult = 1;
+        Mockito.when(feline.getKittens()).thenReturn(expectedResult);
         assertEquals(expectedResult, lion.getKittens());
     }
 
@@ -57,6 +50,7 @@ public class LionTest {
     public void getFoodTest() throws Exception {
         Lion lion = new Lion(new Feline(), "Самец");
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
+        Mockito.when(feline.getFood("Хищник")).thenReturn(expectedResult);
         assertEquals(expectedResult, lion.getFood());
     }
 }

@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: LionTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.86 s - in LionTest
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.494 s <<< FAILURE! - in LionTest
+unnecessary Mockito stubbings(LionTest)  Time elapsed: 0.062 s  <<< ERROR!
+org.mockito.exceptions.misusing.UnnecessaryStubbingException: 
+
+Unnecessary stubbings detected in test class: LionTest
+Clean & maintainable test code requires zero unnecessary code.
+Following stubbings are unnecessary (click to navigate to relevant line of code):
+  1. -> at LionTest.getFoodTest(LionTest.java:52)
+Please remove unnecessary stubbings or use 'lenient' strictness. More info: javadoc for UnnecessaryStubbingException class.
+
