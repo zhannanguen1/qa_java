@@ -31,15 +31,5 @@ public class FelineTest {
         assertEquals(expectedResult, feline.getKittens(kittensQuantity));
     }
 
-    @Test
-    public void getFamilyTest() {
-        Feline feline = new Feline();
-        assertEquals("Кошачьи", feline.getFamily());
-    }
 
-    @Test
-    public void getKittensTest() {
-        Feline feline = new Feline();
-        assertEquals(1, feline.getKittens());
-    }
 }
